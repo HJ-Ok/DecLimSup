@@ -3,10 +3,10 @@
 [![Paper](https://img.shields.io/badge/Paper-arxiv.2406.18002-red)](https://arxiv.org/abs/2406.18002)
 [![Conference](https://img.shields.io/badge/EMNLP-2024-orange)](##Citation)
 
-This repository contains the code of our work.
-Refactoring code and code for HPU will be released soon.
+This repository contains our work code.
+The refactoring code and code for HPU will be released soon.
 
-You can run the code by referring *script.sh* file 
+You can run the code by referring to the *script.sh* file 
 
 ## Coming Soon
   - [ ] Code refactoring and details for easy to use
