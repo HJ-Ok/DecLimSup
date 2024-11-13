@@ -1,0 +1,11 @@
+save_models/
+outputs/
+logit_pickle/
+outputs_test/
+wandb/
+script/
+slurm_runfiles/
+log/
+prompt_list/__pycache__/
+__pycache__/
+pickles/

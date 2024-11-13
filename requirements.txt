@@ -1,0 +1,6 @@
+scikit-learn
+pandas
+transformers
+wandb
+optimum
+nvidia-cuda-nvcc-cu11
