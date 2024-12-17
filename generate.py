@@ -5,12 +5,12 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import wandb
 from datasets import load_dataset
 from tqdm import tqdm
 
 import prompt_list.gsm8k
 import prompt_list.strategyqa
-import wandb
 from utils import Checker, find_number, find_rank, load_benchmark
 
 
@@ -105,9 +105,7 @@ def generate_with_reference(
                     new_argmax = torch.argmax(new_output)
                     ref_argmax = torch.argmax(ref_output)
 
-                    tmp_inputs = torch.cat(
-                        (inputs.input_ids.to(device), new_argmax.unsqueeze(0).unsqueeze(0)), dim=1
-                    )
+                    tmp_inputs = torch.cat((inputs.input_ids.to(device), new_argmax.unsqueeze(0).unsqueeze(0)), dim=1)
                 else:
                     ori_inputs = generate_model.prepare_inputs_for_generation(tmp_inputs)
                     ori_output = get_first_token(generate_model, ori_inputs)

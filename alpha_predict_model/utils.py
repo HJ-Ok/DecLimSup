@@ -22,6 +22,7 @@ def calc_f1_acc(pred, df):
             correct_count += 1
     return correct_count / len(df)
 
+
 class AverageMeter(object):
     """Computes and stores the average and current value"""
 

@@ -3,6 +3,8 @@ import json
 import os
 import pickle
 
+import habana_frameworks.torch.core as htcore
+import habana_frameworks.torch.hpu as hpu
 import numpy as np
 import torch
 import torch._dynamo
@@ -10,8 +12,6 @@ import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 from generate import generate, generate_with_reference
-import habana_frameworks.torch.core as htcore
-import habana_frameworks.torch.hpu as hpu
 
 torch._dynamo.config.suppress_errors = True
 

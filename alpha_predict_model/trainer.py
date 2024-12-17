@@ -5,7 +5,6 @@ import torch
 import torch.nn as nn
 
 from utils import AverageMeter, calc_f1_acc, timeSince
-import torch
 
 
 def round_to_quarter_tensor(numbers):
