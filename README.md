@@ -4,8 +4,8 @@
 [![Conference](https://img.shields.io/badge/EMNLP-2024-orange)](##Citation)
 
 
-You can run the code by referring to the *script.sh* file 
-Also our code supports Gaudi HPUs. You can enable it by adding the `--use_hpu` flag.
+You can run the code by referring to the *script.sh* file  
+Also our code supports **Gaudi HPU**s. You can enable it by adding the `--use_hpu`.
 
 ## How to Run the Code
 
