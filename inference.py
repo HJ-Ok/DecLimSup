@@ -9,7 +9,9 @@ import torch._dynamo
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
-from generate import generate, generate_with_pickle, generate_with_reference
+from generate import generate, generate_with_reference
+import habana_frameworks.torch.core as htcore
+import habana_frameworks.torch.hpu as hpu
 
 torch._dynamo.config.suppress_errors = True
 
@@ -38,12 +40,15 @@ def parse_args():
     parser.add_argument("--task", type=str, default="", required=False)
     parser.add_argument("--ex_name", type=str, default="", required=False)
     parser.add_argument("--huggingface_token", type=str, default="", required=False)
+    parser.add_argument("--use_hpu", action="store_true")
     return parser.parse_args()
 
 
 def inference(args):
-
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if args.use_hpu:
+        device = torch.device("hpu")
+    else:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     generate_tokenizer = AutoTokenizer.from_pretrained(
         args.generate_model, token=args.huggingface_token, cache_dir=args.model_path

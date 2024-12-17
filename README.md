@@ -3,14 +3,38 @@
 [![Paper](https://img.shields.io/badge/Paper-arxiv.2406.18002-red)](https://arxiv.org/abs/2406.18002)
 [![Conference](https://img.shields.io/badge/EMNLP-2024-orange)](##Citation)
 
-This repository contains our work code.
-The refactoring code and code for HPU will be released soon.
 
 You can run the code by referring to the *script.sh* file 
+Also our code supports Gaudi HPUs. You can enable it by adding the `--use_hpu` flag.
 
-## Coming Soon
-  - [ ] Code refactoring and details for easy to use
-  - [ ] Release our code for HPU
+## How to Run the Code
+
+You can run the code using the following command:
+
+```bash
+python inference.py
+```
+### Arguments
+
+Below is a description of the key arguments:
+
+#### `--benchmark` (str)
+- **Description**: Specifies the benchmark to evaluate the model on.  
+- **Supported Benchmarks**:  
+    - `gsm8k`, `strategyqa`, `multiarith`, `math`, `arc_c`, `arc_e`, `svamp`  
+
+#### `--N` (int)
+- **Description**: Determines how many tokens will receive knowledge from the teacher model.  
+
+#### `--multi_exec` (bool)
+- **Description**: Enables running multiple alpha values in a single execution. 
+
+  - ##### `--alpha_start` The starting value of alpha.
+
+  - ##### `--alpha_end` The ending value of alpha.
+
+  - ##### `--alpha_step` The step size for iterating over alpha values.
+
 
 ## Introduction
 DecLimSup is our work that **empirically analyzes contrastive decoding settings in a limited supervision scenario of teacher LLM**. We find that it is essential to adaptively overtrust or disregard the LLM prediction based on the confidence of the small-scale LLM. Our experiments on a wide range of models and datasets demonstrate that our method consistently improves over conventional decoding strategies.
