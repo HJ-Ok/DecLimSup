@@ -1,7 +1,7 @@
 # DecLimSup: Decoding with Limited Teacher Supervision Requires Understanding When to Trust the Teacher
 
 [![Paper](https://img.shields.io/badge/Paper-arxiv.2406.18002-red)](https://arxiv.org/abs/2406.18002)
-[![Conference](https://img.shields.io/badge/EMNLP-2024-orange)](##Citation)
+[![Conference](https://img.shields.io/badge/EMNLP-2024-orange)](https://aclanthology.org/2024.emnlp-main.693/)
 
 
 You can run the code by referring to the *script.sh* file  
